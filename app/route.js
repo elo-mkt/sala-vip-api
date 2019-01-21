@@ -23,14 +23,12 @@ router.get('/sync', function (req, res, next) {
     request
         .get({
                 url: process.env.API_LOUNGE_URL_FACILITIES + '?lang=pt-br',
-                insecure: true
+                rejectUnauthorized: false
             }
         )
         .on('response', function (response) {
             res.send(JSON.stringify({'msg': response}));
-        }).on('error', function (err) {
-        res.send(JSON.stringify({'msg': err}));
-    })
+        });
 })
 ;
 
