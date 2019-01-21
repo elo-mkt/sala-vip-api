@@ -23,6 +23,7 @@ router.get('/sync', function (req, res, next) {
     request
         .get({
                 url: process.env.API_LOUNGE_URL_FACILITIES + '?lang=pt-br',
+                tunnel: false,
                 strictSSL: false
             }
         )
