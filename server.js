@@ -12,13 +12,6 @@ var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     mongoURL = process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL,
     mongoURLLabel = "";
 
-console.log('-------------------')
-console.log(process)
-console.log('-------------------')
-console.log(process.env)
-console.log('-------------------')
-console.log(process.env.API_LOUNGE_PASSWORD)
-console.log('-------------------')
 let apiRouter = require('./app/route');
 app.use('/', apiRouter);
 
