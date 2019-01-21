@@ -1,4 +1,3 @@
-require('dotenv-safe').load();
 let mongodb = require('./../config/mongodb');
 let Request = require('request');
 
