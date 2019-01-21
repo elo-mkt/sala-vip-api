@@ -6,7 +6,6 @@ module.exports = function () {
 
     console.log('sync init...');
     console.log('search token...');
-    process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
     mongodb(function (db) {
 
         db.collection('lounge_token').findOne(function (err, result) {

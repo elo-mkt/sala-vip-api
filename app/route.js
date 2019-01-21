@@ -1,3 +1,5 @@
+let request = require('request');
+
 var express = require('express'),
     router = express.Router(),
     cmd = require('./command'),
@@ -17,9 +19,20 @@ router.get('/teste', function (req, res, next) {
 //
 router.get('/sync', function (req, res, next) {
     res.set('Content-Type', 'application/json');
-    loungeApi();
-    res.send(JSON.stringify({'status': 1}));
-});
+
+    request
+        .get({
+                url: process.env.API_LOUNGE_URL_FACILITIES + '?lang=pt-br',
+                strictSSL: false
+            }
+        )
+        .on('response', function (response) {
+            res.send(JSON.stringify({'msg': response}));
+        }).on('error', function (err) {
+        res.send(JSON.stringify({'msg': err}));
+    })
+})
+;
 
 router.get('/get-countries', function (req, res, next) {
     cmd.getCountries(req, res)
