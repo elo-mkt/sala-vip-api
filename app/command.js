@@ -168,7 +168,7 @@ command.importFileJsonLoungeFacilities = function (request, response) {
     var jsonData = fs.readFileSync("./lounges_facilities.json", "utf8");
     var data = JSON.parse(jsonData);
     console.log(data);
-    
+
     for (var i = 0; i < data.length; i++) {
         mongodb(function (db) {
             console.log(data[i])
