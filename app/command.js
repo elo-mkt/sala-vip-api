@@ -174,7 +174,7 @@ command.importFileJsonLoungeFacilities = function (request, response) {
         mongodb(function (db) {
             console.log(data[i])
             db.collection('lounge_facilities').insertOne({
-                lang: data[i].lang,
+                lang: 'pt-br',
                 token: data[i].token,
                 name: data[i].string,
                 created_at: new Date(),
