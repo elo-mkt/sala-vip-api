@@ -91,28 +91,33 @@ command.importFileJsonLoungeToken = function (request, response) {
     var data = JSON.parse(jsonData);
 
     mongodb(function (db) {
-        db.collection('lounge_token').deleteMany();
         db.collection('lounge_token').insertOne({token: data.token, created_at: new Date()})
     });
 
 
-    return response.send('ok');
+    // return response.send('ok');
 
 };
+command.cleanALl = function (request, response) {
+
+    mongodb(function (db) {
+        db.collection('lounge_token').deleteMany();
+        db.collection('lounges').deleteMany();
+        db.collection('lounge_facilities').deleteMany();
+    });
+
+}
 
 command.importFileJsonLounge = function (request, response) {
 
     var jsonData = fs.readFileSync("./lounges.json", "utf8");
     var data = JSON.parse(jsonData);
 
-    mongodb(function (db) {
-        db.collection('lounges').deleteMany();
-    });
 
     for (var item in data) {
 
         mongodb(function (db) {
-
+            console.log(data[item].country, data[item].city)
             db.collection('lounges').insertOne({
                 dci_code: data[item].dci_code,
                 lang: 'pt-br',
@@ -157,7 +162,7 @@ command.importFileJsonLounge = function (request, response) {
     }
 
 
-    return response.send('ok');
+    // return response.send('ok');
 
 };
 
@@ -165,15 +170,9 @@ command.importFileJsonLoungeFacilities = function (request, response) {
     var jsonData = fs.readFileSync("./lounges_facilities.json", "utf8");
     var data = JSON.parse(jsonData);
 
-
-    mongodb(function (db) {
-        db.collection('lounge_facilities').deleteMany();
-    });
-
     for (var item in data) {
-
         mongodb(function (db) {
-
+            console.log(data[item])
             db.collection('lounge_facilities').insertOne({
                 lang: data[item].lang,
                 token: data[item].token,
@@ -186,7 +185,7 @@ command.importFileJsonLoungeFacilities = function (request, response) {
         });
     }
 
-    return response.send('ok');
+    // return response.send('ok');
 
 };
 

@@ -63,10 +63,9 @@ router.get('/administrador/import-file-lounges-facilities', function (req, res, 
     cmd.importFileJsonLoungeFacilities(req, res)
 });
 
-
-
-
-
+router.get('/administrador/clean-all', function (req, res, next) {
+    cmd.cleanALl(req, res)
+});
 
 // //
 // router.get('/sync', function (req, res, next) {
