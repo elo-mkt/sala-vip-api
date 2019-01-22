@@ -1,0 +1,11 @@
+{
+  "_id":{
+    "$oid":"5c460abda4d00d1d77e1ca4d"
+  },
+  "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9kaW5lcnNjbHViLmNvbSIsImlhdCI6MTU0ODA5NDE0MSwiZXhwIjoxNTQ4MTA4NTQxLCJ1aWQiOiJwYXVsYSIsInNjb3BlcyI6WyJsb3VuZ2VzIiwicHJvdmlkZXI6TEciLCJwcm92aWRlcjpEQ0kgXC9QTCJdfQ.kkRJlc1UtrnwvPcSuhPgd7pUq6u7tVOFl1wWrgFoMmo",
+  "created_at":{
+    "$date":{
+      "$numberLong":"1548094141300"
+    }
+  }
+}
