@@ -1,11 +1,8 @@
 let mongodb = require('./config/mongodb');
+const fs = require('fs');
 
 // Api end points...
 let command = {}
-
-
-let mongodb = require('../../config/database');
-const fs = require('fs');
 
 // Api end points...
 command.getCountries = function (request, response) {
