@@ -1,1 +1,212 @@
-[{"_id":{"$oid":"5c460abda4d00d1d77e1ca4e"},"lang":"pt-br","token":"TV","name":"TV","created_at":{"$date":"2019-01-21T18:09:01.764Z"},"updated_at":{"$date":"2019-01-21T20:44:01.064Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca4f"},"lang":"pt-br","token":"TEL","name":"Telefone","created_at":{"$date":"2019-01-21T18:09:01.771Z"},"updated_at":{"$date":"2019-01-21T20:44:01.069Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca50"},"lang":"pt-br","token":"WIFI","name":"Wi-fi","created_at":{"$date":"2019-01-21T18:09:01.773Z"},"updated_at":{"$date":"2019-01-21T20:44:01.070Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca51"},"lang":"pt-br","token":"NOSMOKE","name":"No Fumar","created_at":{"$date":"2019-01-21T18:09:01.775Z"},"updated_at":{"$date":"2019-01-21T20:44:01.075Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca52"},"lang":"pt-br","token":"NEWSMAG","name":"Jornais e revistas","created_at":{"$date":"2019-01-21T18:09:01.775Z"},"updated_at":{"$date":"2019-01-21T20:44:01.076Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca53"},"lang":"pt-br","token":"SHOWER","name":"Chuveiros","created_at":{"$date":"2019-01-21T18:09:01.776Z"},"updated_at":{"$date":"2019-01-21T20:44:01.074Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca54"},"lang":"pt-br","token":"INTERNT","name":"Porta de dados Internet","created_at":{"$date":"2019-01-21T18:09:01.779Z"},"updated_at":{"$date":"2019-01-21T20:44:01.080Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca55"},"lang":"pt-br","token":"REFRESH","name":"Comida y Bebidas","created_at":{"$date":"2019-01-21T18:09:01.779Z"},"updated_at":{"$date":"2019-01-21T20:44:01.078Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca56"},"lang":"pt-br","token":"FLTINFO","name":"Monitor com informações de voos","created_at":{"$date":"2019-01-21T18:09:01.780Z"},"updated_at":{"$date":"2019-01-21T20:44:01.079Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca57"},"lang":"pt-br","token":"FAX","name":"Fax","created_at":{"$date":"2019-01-21T18:09:01.780Z"},"updated_at":{"$date":"2019-01-21T20:44:01.079Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca58"},"lang":"pt-br","token":"DISABLE","name":"Acesso para pessoas com deficiência","created_at":{"$date":"2019-01-21T18:09:01.784Z"},"updated_at":{"$date":"2019-01-21T20:44:01.085Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca59"},"lang":"pt-br","token":"CONF","name":"Dependências para reuniões","created_at":{"$date":"2019-01-21T18:09:01.784Z"},"updated_at":{"$date":"2019-01-21T20:44:01.084Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca5a"},"lang":"pt-br","token":"ALCOHOL","name":"Bebidas alcoólica","created_at":{"$date":"2019-01-21T18:09:01.785Z"},"updated_at":{"$date":"2019-01-21T20:44:01.088Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca5b"},"lang":"pt-br","token":"CNN","name":"CNN","created_at":{"$date":"2019-01-21T18:09:01.786Z"},"updated_at":{"$date":"2019-01-21T20:44:01.086Z"}},{"_id":{"$oid":"5c460abda4d00d1d77e1ca5c"},"lang":"pt-br","token":"AIRCON","name":"Ar condicionado","created_at":{"$date":"2019-01-21T18:09:01.786Z"},"updated_at":{"$date":"2019-01-21T20:44:01.087Z"}}]
+[
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca4e"
+    },
+    "lang": "pt-br",
+    "token": "TV",
+    "name": "TV",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.764Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.064Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca4f"
+    },
+    "lang": "pt-br",
+    "token": "TEL",
+    "name": "Telefone",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.771Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.069Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca50"
+    },
+    "lang": "pt-br",
+    "token": "WIFI",
+    "name": "Wi-fi",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.773Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.070Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca51"
+    },
+    "lang": "pt-br",
+    "token": "NOSMOKE",
+    "name": "No Fumar",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.775Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.075Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca52"
+    },
+    "lang": "pt-br",
+    "token": "NEWSMAG",
+    "name": "Jornais e revistas",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.775Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.076Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca53"
+    },
+    "lang": "pt-br",
+    "token": "SHOWER",
+    "name": "Chuveiros",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.776Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.074Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca54"
+    },
+    "lang": "pt-br",
+    "token": "INTERNT",
+    "name": "Porta de dados Internet",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.779Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.080Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca55"
+    },
+    "lang": "pt-br",
+    "token": "REFRESH",
+    "name": "Comida y Bebidas",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.779Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.078Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca56"
+    },
+    "lang": "pt-br",
+    "token": "FLTINFO",
+    "name": "Monitor com informações de voos",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.780Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.079Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca57"
+    },
+    "lang": "pt-br",
+    "token": "FAX",
+    "name": "Fax",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.780Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.079Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca58"
+    },
+    "lang": "pt-br",
+    "token": "DISABLE",
+    "name": "Acesso para pessoas com deficiência",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.784Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.085Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca59"
+    },
+    "lang": "pt-br",
+    "token": "CONF",
+    "name": "Dependências para reuniões",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.784Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.084Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca5a"
+    },
+    "lang": "pt-br",
+    "token": "ALCOHOL",
+    "name": "Bebidas alcoólica",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.785Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.088Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca5b"
+    },
+    "lang": "pt-br",
+    "token": "CNN",
+    "name": "CNN",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.786Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.086Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "5c460abda4d00d1d77e1ca5c"
+    },
+    "lang": "pt-br",
+    "token": "AIRCON",
+    "name": "Ar condicionado",
+    "created_at": {
+      "$date": "2019-01-21T18:09:01.786Z"
+    },
+    "updated_at": {
+      "$date": "2019-01-21T20:44:01.087Z"
+    }
+  }
+]
