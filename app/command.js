@@ -114,7 +114,7 @@ command.importFileJsonLounge = function (request, response) {
     var data = JSON.parse(jsonData);
 
 
-    for (var i =0; data.length <i; i++) {
+    for (var i = 0; data.length < i; i++) {
 
         mongodb(function (db) {
             console.log(data[i].country, data[i].city)
@@ -170,7 +170,7 @@ command.importFileJsonLoungeFacilities = function (request, response) {
     var jsonData = fs.readFileSync("./lounges_facilities.json", "utf8");
     var data = JSON.parse(jsonData);
 
-    for (var i=0; i< data.length; datai++) {
+    for (var i = 0; i < data.length; i++) {
         mongodb(function (db) {
             console.log(data[i])
             db.collection('lounge_facilities').insertOne({
