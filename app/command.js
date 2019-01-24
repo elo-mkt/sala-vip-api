@@ -1,64 +1,110 @@
 let mongodb = require('./config/mongodb');
 const fs = require('fs');
+const arrCountries = JSON.parse(fs.readFileSync('./lounges.json'));
+
+// Sort By Keys
+function sortByKey(array, key) {
+    return array.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+}
 
 // Api end points...
 let command = {}
 
 // Api end points...
 command.getCountries = function (request, response) {
+    let flags = [], output = [], l = arrCountries.length, i;
+    for( i=0; i<l; i++) {
+        if( flags[arrCountries[i].country]) continue;
+        flags[arrCountries[i].country] = true;
+        output.push({
+            country: arrCountries[i].country,
+            id_country_slug: arrCountries[i].id_country_slug
+        });
+    }
 
-    mongodb(function (db) {
-        db.collection('lounges').aggregate([
-            {
-                $group: {
-                    _id: {
-                        country: '$country',
-                        id_country_slug: '$id_country_slug'
-                    }
-                }
-            }
-        ]).toArray(function (err, result) {
-            return response.send(result);
-        })
+    // let unique = [...new Set(arrCountries.map(item => item.country))];
 
-    });
+    // mongodb(function (db) {
+    //     db.collection('lounges').aggregate([
+    //         {
+    //             $group: {
+    //                 _id: {
+    //                     country: '$country',
+    //                     id_country_slug: '$id_country_slug'
+    //                 }
+    //             }
+    //         }
+    //     ]).toArray(function (err, result) {
+    //         return response.send(result);
+    //     })
+
+    // });
+
+    return response.send(sortByKey(output, 'country'));
 
 };
 
 command.getCitiesByCountry = function (request, response) {
+    let flags = [], output = [], l = arrCountries.length, i;
+    for( i=0; i<l; i++) {
+        if(arrCountries[i].id_country_slug == request.query.id_country_slug) {
+            if( flags[arrCountries[i].city]) continue;
+                flags[arrCountries[i].city] = true;
+        
+                output.push({
+                    city: arrCountries[i].city,
+                    id_city_slug: arrCountries[i].id_city_slug
+                });
+        }
+    }
 
-    mongodb(function (db) {
-        db.collection('lounges').aggregate([
-            {
-                $match: {
-                    id_country_slug: request.query.id_country_slug
-                }
-            },
-            {
-                $group: {
-                    _id: {
-                        city: '$city', id_city_slug: '$id_city_slug'
-                    }
-                }
-            }
-        ]).toArray(function (err, result) {
-            return response.send(result);
-        });
-    });
+    // mongodb(function (db) {
+    //     db.collection('lounges').aggregate([
+    //         {
+    //             $match: {
+    //                 id_country_slug: request.query.id_country_slug
+    //             }
+    //         },
+    //         {
+    //             $group: {
+    //                 _id: {
+    //                     city: '$city', id_city_slug: '$id_city_slug'
+    //                 }
+    //             }
+    //         }
+    //     ]).toArray(function (err, result) {
+    //         return response.send(result);
+    //     });
+    // });
+
+    // return response.send(arrCountries);
+    return response.send(sortByKey(output, 'city'));
 
 };
 
 command.getLoungesByCityAndCountry = function (request, response) {
+    let flags = [], output = [], l = arrCountries.length, i;
+    for( i=0; i<l; i++) {
+        if(arrCountries[i].id_country_slug == request.query.id_country_slug && arrCountries[i].id_city_slug == request.query.id_city_slug) {
+            delete arrCountries[i]._id;
+            output.push(arrCountries[i]);
+        }
+    }
 
-    mongodb(function (db) {
-        db.collection('lounges').find(
-            {id_city_slug: request.query.id_city_slug, id_country_slug: request.query.id_country_slug},
-            {projection: {_id: 0}}
-        ).toArray(function (err, result) {
-            return response.send(result);
-        });
+    // mongodb(function (db) {
+    //     db.collection('lounges').find(
+    //         {id_city_slug: request.query.id_city_slug, id_country_slug: request.query.id_country_slug},
+    //         {projection: {_id: 0}}
+    //     ).toArray(function (err, result) {
+    //         return response.send(result);
+    //     });
 
-    });
+    // });
+
+    return response.send(output);
 };
 
 
