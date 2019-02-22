@@ -1,9 +1,14 @@
 let request = require('request');
 
 var express = require('express'),
+    cors = require('cors'),
     router = express.Router(),
     cmd = require('./command'),
-    loungeApi = require('./services/apiExternaLounge');
+    loungeApi = require('./services/apiExternaLounge'),
+    app = express();
+
+    app.use(cors());
+
 
 // router.get('/', function(req, res) {
 //     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -39,26 +44,14 @@ router.get('/sync', function (req, res, next) {
 
 //APP
 router.get('/get-countries', function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
-    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     cmd.getCountries(req, res)
 });
 
 router.get('/get-cities-by-country', function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
-    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     cmd.getCitiesByCountry(req, res)
 });
 
 router.get('/get-lounges-by-city-and-country', function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
-    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     cmd.getLoungesByCityAndCountry(req, res)
 });
 
@@ -104,19 +97,11 @@ router.get('/administrador/clean-all', function (req, res, next) {
 
 //CONTROL
 router.get('/', function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
-    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     res.set('Content-Type', 'application/json');
     res.send(JSON.stringify({1: 1}));
 });
 
 router.get('/pagecount', function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
-    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     res.set('Content-Type', 'application/json');
     res.send(JSON.stringify({a: 1}));
 });
