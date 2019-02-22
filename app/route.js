@@ -5,7 +5,6 @@ var express = require('express'),
     cmd = require('./command'),
     loungeApi = require('./services/apiExternaLounge');
 
-
 //SYNC
 router.get('/sync1', function (req, res, next) {
     res.set('Content-Type', 'application/json');
@@ -31,14 +30,20 @@ router.get('/sync', function (req, res, next) {
 
 //APP
 router.get('/get-countries', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     cmd.getCountries(req, res)
 });
 
 router.get('/get-cities-by-country', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     cmd.getCitiesByCountry(req, res)
 });
 
 router.get('/get-lounges-by-city-and-country', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     cmd.getLoungesByCityAndCountry(req, res)
 });
 
