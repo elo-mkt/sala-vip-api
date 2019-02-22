@@ -5,6 +5,15 @@ var express = require('express'),
     cmd = require('./command'),
     loungeApi = require('./services/apiExternaLounge');
 
+// router.get('/', function(req, res) {
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+//     res.setHeader('Access-Control-Allow-Credentials', true); // If needed
+
+//     res.send('cors problem fixed:)');
+// });
+
 //SYNC
 router.get('/sync1', function (req, res, next) {
     res.set('Content-Type', 'application/json');
@@ -30,20 +39,26 @@ router.get('/sync', function (req, res, next) {
 
 //APP
 router.get('/get-countries', function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     cmd.getCountries(req, res)
 });
 
 router.get('/get-cities-by-country', function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     cmd.getCitiesByCountry(req, res)
 });
 
 router.get('/get-lounges-by-city-and-country', function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     cmd.getLoungesByCityAndCountry(req, res)
 });
 
@@ -89,11 +104,19 @@ router.get('/administrador/clean-all', function (req, res, next) {
 
 //CONTROL
 router.get('/', function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     res.set('Content-Type', 'application/json');
     res.send(JSON.stringify({1: 1}));
 });
 
 router.get('/pagecount', function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE'); // If needed
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type'); // If needed
+    res.setHeader('Access-Control-Allow-Credentials', true); // If needed
     res.set('Content-Type', 'application/json');
     res.send(JSON.stringify({a: 1}));
 });
